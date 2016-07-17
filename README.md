@@ -35,6 +35,18 @@ haxe_flags: -swf-header 800:600:60:FFFFFF -lib haxeui-core -lib haxeui-flambe
 _Note: Currently you must also include `haxeui-core` explicitly during the alpha, eventually `haxelib.json` files will exist to take care of this dependency automatically._
 
 <h3>Toolkit initialisation and usage</h3>
+The `Flambe` system itself must be initialised and an asset pack loaded before HaxeUI can be initialised and used. This is done with code similar to:
+
+```haxe
+// Wind up all platform-specific stuff
+System.init();
+
+// Load up the compiled pack in the assets directory named "bootstrap"
+var manifest = Manifest.fromAssets("bootstrap");
+var loader = System.loadAssetPack(manifest);
+loader.get(onAssetsLoaded);
+```
+
 Initialising the toolkit requires you to add this single line somewhere _before_ you start to actually use HaxeUI in your application but _after_ you have loaded the `Flambe` asset pack:
  
 ```haxe
