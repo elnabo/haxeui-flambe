@@ -1,18 +1,18 @@
 <target id="flambe">
-	<classes>
+    <classes>
         <!--
-		<class source="flambe.display.Texture"          target="haxe.ui.assets.ImageData" />
-		<class source="haxe.ui.flambe.FontBase"         target="haxe.ui.assets.FontData" />
-		<class source="haxe.ui.flambe.AssetsBase"       target="haxe.ui.AssetsBase" />
-		<class source="haxe.ui.flambe.ComponentBase"    target="haxe.ui.core.ComponentBase" />
-		<class source="haxe.ui.flambe.TextDisplayBase"  target="haxe.ui.core.TextDisplayBase" />
-		<class source="haxe.ui.flambe.TextInputBase"    target="haxe.ui.core.TextInputBase" />
-		<class source="haxe.ui.flambe.ImageDisplayBase" target="haxe.ui.core.ImageDisplayBase" />
-		<class source="haxe.ui.flambe.ScreenBase"       target="haxe.ui.core.ScreenBase" />
-		<class source="haxe.ui.flambe.PlatformBase"     target="haxe.ui.core.PlatformBase" />
-		<class source="haxe.ui.flambe.TimerBase"        target="haxe.ui.util.TimerBase" />
-		<class source="haxe.ui.flambe.AppBase"          target="haxe.ui.AppBase" />
-		<class source="haxe.ui.flambe.ByteArrayBase"    target="haxe.ui.util.ByteArrayBase" />
-        -->    
-	</classes>
+        <class source="flambe.display.Texture"          target="haxe.ui.assets.ImageData" />
+        <class source="haxe.ui.flambe.FontBase"         target="haxe.ui.assets.FontData" />
+        <class source="haxe.ui.flambe.AssetsBase"       target="haxe.ui.AssetsBase" />
+        <class source="haxe.ui.flambe.ComponentBase"    target="haxe.ui.core.ComponentBase" />
+        <class source="haxe.ui.flambe.TextDisplayBase"  target="haxe.ui.core.TextDisplayBase" />
+        <class source="haxe.ui.flambe.TextInputBase"    target="haxe.ui.core.TextInputBase" />
+        <class source="haxe.ui.flambe.ImageDisplayBase" target="haxe.ui.core.ImageDisplayBase" />
+        <class source="haxe.ui.flambe.ScreenBase"       target="haxe.ui.core.ScreenBase" />
+        <class source="haxe.ui.flambe.PlatformBase"     target="haxe.ui.core.PlatformBase" />
+        <class source="haxe.ui.flambe.TimerBase"        target="haxe.ui.util.TimerBase" />
+        <class source="haxe.ui.flambe.AppBase"          target="haxe.ui.AppBase" />
+        <class source="haxe.ui.flambe.ByteArrayBase"    target="haxe.ui.util.ByteArrayBase" />
+        -->
+    </classes>
 </target>
