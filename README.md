@@ -24,7 +24,7 @@ The simplest method to create a new `Flambe` application that is HaxeUI ready is
 If however you already have an existing application, then incorporating HaxeUI into that application is straightforward:
 
 <h3>flambe.yaml</h3>
-In order to use haxeui with an existing `Flambe` application you must add these libraries to your `flambe.yaml` configuration file as part of the `haxe_flags` attribute. Eg:
+In order to use HaxeUI with an existing `Flambe` application you must add these libraries to your `flambe.yaml` configuration file as part of the `haxe_flags` attribute. Eg:
 
 ```yaml
 # Additional flags to pass to the Haxe compiler.
