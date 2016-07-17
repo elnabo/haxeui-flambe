@@ -47,7 +47,7 @@ var loader = System.loadAssetPack(manifest);
 loader.get(onAssetsLoaded);
 ```
 
-Initialising the toolkit requires you to add this single line somewhere _before_ you start to actually use HaxeUI in your application but _after_ you have loaded the `Flambe` asset pack:
+Initialising the toolkit requires you to add these lines somewhere _before_ you start to actually use HaxeUI in your application but _after_ you have loaded the `Flambe` asset pack:
  
 ```haxe
 private static function onAssetsLoaded(pack:AssetPack) {
