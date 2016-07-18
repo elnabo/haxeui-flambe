@@ -1,4 +1,4 @@
-package haxe.ui.core;
+package haxe.ui.backend;
 
 import flambe.Entity;
 import flambe.System;
@@ -14,7 +14,7 @@ import haxe.ui.core.MouseEvent;
 import haxe.ui.core.TextDisplay;
 import haxe.ui.core.TextInput;
 import haxe.ui.core.UIEvent;
-import haxe.ui.flambe.StyleHelper;
+import haxe.ui.backend.flambe.StyleHelper;
 import haxe.ui.styles.Style;
 import haxe.ui.util.Rectangle;
 

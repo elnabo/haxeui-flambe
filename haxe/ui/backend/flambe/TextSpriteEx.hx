@@ -1,4 +1,4 @@
-package haxe.ui.flambe;
+package haxe.ui.backend.flambe;
 
 import flambe.display.Font;
 import flambe.display.Graphics;

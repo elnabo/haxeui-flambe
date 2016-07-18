@@ -1,4 +1,4 @@
-package haxe.ui;
+package haxe.ui.backend;
 
 import flambe.System;
 import flambe.asset.AssetPack;

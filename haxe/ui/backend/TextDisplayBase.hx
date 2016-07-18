@@ -1,10 +1,10 @@
-package haxe.ui.core;
+package haxe.ui.backend;
 
 import flambe.asset.AssetPack;
 import flambe.display.Font;
 import haxe.ui.Toolkit;
 import haxe.ui.core.Component;
-import haxe.ui.flambe.TextSpriteEx;
+import haxe.ui.backend.flambe.TextSpriteEx;
 
 class TextDisplayBase extends TextSpriteEx {
     public var parentComponent:Component;
