@@ -3,7 +3,7 @@ package haxe.ui.core;
 import flambe.display.ImageSprite;
 import haxe.ui.assets.ImageInfo;
 
-#if html
+#if (html || js)
 import js.Browser;
 import js.html.*;
 #else

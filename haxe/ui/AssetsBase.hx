@@ -10,7 +10,7 @@ import haxe.io.Bytes;
 import haxe.ui.assets.FontInfo;
 import haxe.ui.assets.ImageInfo;
 
-#if html
+#if (html || js)
 import js.Browser;
 import js.html.*;
 #else
@@ -65,7 +65,7 @@ class AssetsBase {
     private function getImageFromHaxeResource(resourceId:String, callback:String->ImageInfo->Void) {
         var bytes:Bytes = Resource.getBytes(resourceId);
 
-        #if html
+        #if (html || js)
 
         var image = Browser.document.createImageElement();
         image.onload = function(e) {
