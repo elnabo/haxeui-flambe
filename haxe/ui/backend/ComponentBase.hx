@@ -329,6 +329,7 @@ class ComponentBase extends Sprite implements IComponentBase {
     }
 
     private function dispatchMouseEvent(type:String, copyFrom:PointerEvent):Void {
+        copyFrom.stopPropagation();
         var fn = _eventMap.get(type);
         if (fn != null) {
             var mouseEvent = new MouseEvent(type);
