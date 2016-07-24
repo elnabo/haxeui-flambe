@@ -8,6 +8,10 @@
 <h2>haxeui-flambe</h2>
 `haxeui-flambe` is the `Flambe` backend for HaxeUI.
 
+<p align="center">
+	<img src="https://github.com/haxeui/haxeui-flambe/raw/master/screen.png" />
+</p>
+
 <h2>Installation</h2>
  * `haxeui-flambe` has a dependency to <a href="https://github.com/haxeui/haxeui-core">`haxeui-core`</a>, and so that too must be installed.
  * `haxeui-flambe` also has a dependency to <a href="https://github.com/aduros/flambe">Flambe</a>, please refer to the installation instructions on their <a href="https://github.com/aduros/flambe">site</a>.
