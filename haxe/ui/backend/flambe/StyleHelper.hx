@@ -7,6 +7,9 @@ import haxe.ui.styles.Style;
 import haxe.ui.util.ColorUtil;
 import haxe.ui.util.Rectangle;
 import haxe.ui.util.Slice9;
+import haxe.ui.util.filters.DropShadow;
+import haxe.ui.util.filters.Filter;
+import haxe.ui.util.filters.FilterParser;
 
 class StyleHelper {
     public static function paintStyle(g:Graphics, style:Style, w:Float, h:Float):Void {
@@ -96,7 +99,11 @@ class StyleHelper {
         }
 
         if (style.filter != null) {
-            drawShadow(g, 0x888888 | 0x444444, x, y, w, h, 1, true);
+            var f:Filter = FilterParser.parseFilter(style.filter);
+            if (Std.is(f, DropShadow)) {
+                var dropShadow:DropShadow = cast(f, DropShadow);
+                drawShadow(g, 0x888888 | 0x444444, x, y, w, h, 1, dropShadow.inner);
+            }
         }
     }
 
@@ -105,7 +112,7 @@ class StyleHelper {
             for (i in 0...size) {
                 g.setAlpha(1 - ((1 / size) * i));
                 g.setAlpha(.5);
-                g.fillRect(color, x + i, y + w + 1 + i, w + 1, 1); // bottom
+                g.fillRect(color, x + i, y + h + 1 + i, w + 1, 1); // bottom
                 g.fillRect(color, x + w + 1 + i, y + i, 1, h + 2); // right
             }
         } else {
