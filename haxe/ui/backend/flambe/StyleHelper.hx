@@ -102,7 +102,12 @@ class StyleHelper {
             var f:Filter = FilterParser.parseFilter(style.filter);
             if (Std.is(f, DropShadow)) {
                 var dropShadow:DropShadow = cast(f, DropShadow);
-                drawShadow(g, 0x888888 | 0x444444, x, y, w, h, 1, dropShadow.inner);
+                /*
+                if (dropShadow.color == 0x888888) { // not ideal
+                    dropShadow.color |= 0x444444;
+                }
+                */
+                drawShadow(g, dropShadow.color, x, y, w, h, 1, dropShadow.inner);
             }
         }
     }
@@ -111,14 +116,14 @@ class StyleHelper {
         if (inset == false) {
             for (i in 0...size) {
                 g.setAlpha(1 - ((1 / size) * i));
-                g.setAlpha(.5);
+                g.setAlpha(.2);
                 g.fillRect(color, x + i, y + h + 1 + i, w + 1, 1); // bottom
                 g.fillRect(color, x + w + 1 + i, y + i, 1, h + 2); // right
             }
         } else {
             for (i in 0...size) {
                 g.setAlpha(1 - ((1 / size) * i));
-                g.setAlpha(.5);
+                g.setAlpha(.2);
                 g.fillRect(color, x + i, y + i, w - i, 1); // top
                 g.fillRect(color, x + i, y + i, 1, h - i); // left
             }
