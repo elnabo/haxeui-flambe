@@ -140,6 +140,9 @@ class ComponentBase extends Sprite implements IComponentBase {
         this.visible = show;
     }
 
+    private function handleSetComponentIndex(child:Component, index:Int) {
+        
+    }
     //***********************************************************************************************************
     // Redraw callbacks
     //***********************************************************************************************************
