@@ -29,6 +29,11 @@ class ScreenBase {
         return System.stage.height;
     }
 
+    public var dpi(get, null):Float;
+    private function get_dpi():Float {
+        return 72;
+    }
+    
     public var focus(get, set):Component;
     private function get_focus():Component {
         return null;
@@ -38,6 +43,7 @@ class ScreenBase {
     }
 
     public function addComponent(component:Component) {
+        component.setScaleXY(Toolkit.scaleX, Toolkit.scaleY);
         resizeComponent(component);
         var entity = new Entity().add(component);
         _entityMap.set(component, entity);
