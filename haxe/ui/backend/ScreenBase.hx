@@ -157,8 +157,8 @@ class ScreenBase {
         var fn = _mapping.get(type);
         if (fn != null) {
             var mouseEvent = new MouseEvent(type);
-            mouseEvent.screenX = copyFrom.viewX;
-            mouseEvent.screenY = copyFrom.viewY;
+            mouseEvent.screenX = copyFrom.viewX / Toolkit.scaleX;
+            mouseEvent.screenY = copyFrom.viewY / Toolkit.scaleY;
             fn(mouseEvent);
         }
     }
