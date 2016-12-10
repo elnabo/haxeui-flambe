@@ -31,22 +31,35 @@ class TextDisplayBase extends TextSpriteEx {
         return value;
     }
 
+    private var _width:Float;
     public var width(get, set):Float;
     public function set_width(value:Float):Float {
+        if(_width == value) {
+            return value;
+        }
+
+        _width = value;
+        setWrapWidth(value);
         return value;
     }
 
     public function get_width():Float {
-        return textWidth;
+        return _width;
     }
 
+    private var _height:Float;
     public var height(get, set):Float;
     public function set_height(value:Float):Float {
+        if(_height == value) {
+            return value;
+        }
+
+        _height = value;
         return value;
     }
 
     public function get_height() {
-        return textHeight;
+        return _height;
     }
 
     public var textWidth(get, null):Float;
@@ -95,6 +108,30 @@ class TextDisplayBase extends TextSpriteEx {
     private function set_fontSize(value:Null<Float>):Null<Float> {
         if (value == _fontSize) {
             return value;
+        }
+        return value;
+    }
+
+    private var _textAlign:String;
+    public var textAlign(get, set):Null<String>;
+    private function get_textAlign():Null<String> {
+        return _textAlign;
+    }
+    private function set_textAlign(value:Null<String>):Null<String> {
+        if(_textAlign == value) {
+            return value;
+        }
+
+        _textAlign = value;
+        switch(_textAlign) {
+            case "left":
+                align = TextAlign.Left;
+
+            case "center":
+                align = TextAlign.Center;
+
+            case "right":
+                align = TextAlign.Right;
         }
         return value;
     }
