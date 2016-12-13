@@ -141,7 +141,7 @@ class ComponentBase extends Sprite implements IComponentBase {
     }
 
     private function handleSetComponentIndex(child:Component, index:Int) {
-        
+
     }
     //***********************************************************************************************************
     // Redraw callbacks
