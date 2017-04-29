@@ -5,6 +5,7 @@ import flambe.display.Font;
 import haxe.ui.Toolkit;
 import haxe.ui.core.Component;
 import haxe.ui.backend.flambe.TextSpriteEx;
+import haxe.ui.styles.Style;
 
 class TextDisplayBase extends TextSpriteEx {
     public var parentComponent:Component;
@@ -72,67 +73,35 @@ class TextDisplayBase extends TextSpriteEx {
         return getNaturalHeight();
     }
 
-    public var color(get, set):Int;
-    private function get_color():Int {
-        return 0;
-    }
-    private function set_color(value:Int):Int {
-        return value;
-    }
-
     private var _fontName:String;
-    public var fontName(get, set):String;
-    private function get_fontName():String {
-        return _fontName;
-    }
-    private function set_fontName(value:String):String {
-        if (value == _fontName) {
-            return value;
-        }
-        _fontName = value;
-
-        Toolkit.assets.getFont(value, function(f) {
-            var pack:AssetPack = ToolkitAssets.instance.assetPack;
-            font = new Font(pack, _fontName.substr(0, _fontName.length - 4));
-            parentComponent.invalidateLayout();
-        });
-
-        return value;
-    }
-
-    private var _fontSize:Float;// = 16;
-    public var fontSize(get, set):Null<Float>;
-    private function get_fontSize():Null<Float> {
-        return _fontSize;
-    }
-    private function set_fontSize(value:Null<Float>):Null<Float> {
-        if (value == _fontSize) {
-            return value;
-        }
-        return value;
-    }
-
     private var _textAlign:String;
-    public var textAlign(get, set):Null<String>;
-    private function get_textAlign():Null<String> {
-        return _textAlign;
-    }
-    private function set_textAlign(value:Null<String>):Null<String> {
-        if(_textAlign == value) {
-            return value;
+    public function applyStyle(style:Style) {
+        if (style.color != null) {
+            
         }
-
-        _textAlign = value;
-        switch(_textAlign) {
-            case "left":
-                align = TextAlign.Left;
-
-            case "center":
-                align = TextAlign.Center;
-
-            case "right":
-                align = TextAlign.Right;
+        if (style.fontName != null && style.fontName != _fontName) {
+            _fontName = style.fontName;
+            Toolkit.assets.getFont(_fontName, function(f) {
+                var pack:AssetPack = ToolkitAssets.instance.assetPack;
+                font = new Font(pack, _fontName.substr(0, _fontName.length - 4));
+                parentComponent.invalidateLayout();
+            });
         }
-        return value;
+        if (style.fontSize != null) {
+            
+        }
+        if (style.textAlign != null && style.textAlign != _textAlign) {
+            _textAlign = style.textAlign;
+            switch(_textAlign) {
+                case "left":
+                    align = TextAlign.Left;
+
+                case "center":
+                    align = TextAlign.Center;
+
+                case "right":
+                    align = TextAlign.Right;
+            }
+        }
     }
 }
