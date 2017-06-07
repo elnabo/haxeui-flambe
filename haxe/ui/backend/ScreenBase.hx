@@ -42,7 +42,24 @@ class ScreenBase {
         return value;
     }
 
-    public var title:String;
+    public var title(get,set):String;
+    private inline function get_title():String {
+        #if js
+        return js.Browser.document.title;
+        #else
+        trace("WARNING: this platform doesnt support dynamic titles");
+        return "";
+        #end
+    }
+    private inline function set_title(s:String):String {
+        #if js
+        js.Browser.document.title = s;
+        return s;
+        #else
+        trace("WARNING: this platform doesnt support dynamic titles");
+        return "";
+        #end
+    }
 
     public function addComponent(component:Component) {
         component.setScaleXY(Toolkit.scaleX, Toolkit.scaleY);
